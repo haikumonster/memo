@@ -809,7 +809,7 @@ class MemoryLinearAttnProcessor:
         attention_mask: Optional[torch.Tensor] = None,
         temb: Optional[torch.Tensor] = None,
         is_new_audio: bool = False,
-        update_past_memory: bool = False,
+        update_past_memory: bool = True,
         *args,
         **kwargs,
     ) -> torch.Tensor:
