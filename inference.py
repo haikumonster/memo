@@ -115,7 +115,8 @@ def main():
     logger.info(f"Inference dtype: {weight_dtype}")
 
     logger.info(f"Processing image {input_image_path}")
-    img_size = (config.resolution, config.resolution)
+    # img_size = (config.resolution, config.resolution)
+    img_size = (args.width, args.height)
     pixel_values, face_emb = preprocess_image(
         face_analysis_model=face_analysis,
         image_path=input_image_path,
