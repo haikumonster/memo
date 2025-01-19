@@ -51,7 +51,7 @@ def main():
 
     if os.path.exists(output_video_path):
         logger.info(f"Output file {output_video_path} already exists. Skipping inference.")
-        return
+        os.remove(output_video_path)
 
     generator = torch.manual_seed(args.seed)
 
