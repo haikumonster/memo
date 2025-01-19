@@ -30,7 +30,8 @@ def parse_args():
     parser.add_argument("--input_audio", type=str)
     parser.add_argument("--output_dir", type=str)
     parser.add_argument("--seed", type=int, default=42)
-
+    parser.add_argument("--height", type=int, default=448)
+    parser.add_argument("--width", type=int, default=256)
     return parser.parse_args()
 
 
@@ -118,7 +119,9 @@ def main():
     pixel_values, face_emb = preprocess_image(
         face_analysis_model=face_analysis,
         image_path=input_image_path,
-        image_size=config.resolution,
+        # image_size=config.resolution,
+        image_height=args.height,
+        image_width=args.width,
     )
 
     logger.info(f"Processing audio {input_audio_path}")
